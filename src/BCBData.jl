@@ -36,7 +36,7 @@ module BCBData
 		str_end = Dates.format(endDate, "dd/mm/yyyy")
 		
 		if(proxy.host == "")
-			str_proxy = ""
+			str_proxy = ``
 		else
 			host = 
 			str_proxy = `--proxy $(proxy.host):$(proxy.port) --proxy-user $(proxy.user):$(proxy.password)`
