@@ -9,6 +9,9 @@ catch
 	error("Curl not found. Please install curl to use BCBData.")
 end
 
+"""
+A Julia package to read Brazilian Central Bank (BCB) time series data.
+"""
 module BCBData
 
 	using Base.Dates
@@ -16,6 +19,9 @@ module BCBData
 	export ProxyConfig,
 			readData
 	
+	"""
+		Holds proxy configuration.
+	"""
 	type ProxyConfig
 		host::String
 		port::Int64
@@ -30,6 +36,20 @@ module BCBData
 		end #function
 	end # type
 	
+	"""
+	    readData(code::Int64, startDate::Date, endDate::Date, proxy::ProxyConfig=ProxyConfig())
+	
+	Read data from Brazilian Central Bank (BCB) database.
+
+	# Parameters
+	* `code::Int64`: time series ID in BCB database. See https://www3.bcb.gov.br/sgspub/ for a list of series and IDs.
+	* `startDate::Date`: start date. 
+	* `endDate::Date`: end date.
+	* `proxy::ProxyConfig`: instance to hold proxy definitions. If default, no proxy config is set.
+	
+	# Returns
+	Returns two arrays, one with strings representind dates, the other with corresponding numeric values.
+	"""
 	function readData(code::Int64, startDate::Date, endDate::Date, proxy=ProxyConfig())
 	
 		str_start = Dates.format(startDate, "dd/mm/yyyy")
