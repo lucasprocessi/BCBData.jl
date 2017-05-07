@@ -45,7 +45,7 @@ module BCBData
 	* `code::Int64`: time series ID in BCB database. See https://www3.bcb.gov.br/sgspub/ for a list of series and IDs.
 	* `startDate::Date`: start date. 
 	* `endDate::Date`: end date.
-	* `proxy::ProxyConfig`: instance to hold proxy definitions. If default, no proxy config is set.
+	* `proxy::ProxyConfig`: (optional) instance to hold proxy definitions. If not supplied, no proxy config is set.
 	
 	# Returns
 	Returns two arrays, one with strings representind dates, the other with corresponding numeric values.
