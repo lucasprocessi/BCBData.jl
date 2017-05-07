@@ -20,7 +20,7 @@ For installation instructions, please see <[https://curl.haxx.se/download.html](
 
 To use `BCBData` we must first get a time series ID in [SGS](https://www3.bcb.gov.br/sgspub/). 
 For instance, Brazilian Broad National Consumer Price Index (IPCA) has an internal ID of 433.
-`readData()` returns two arrays: the first with string representing a date, the second with its corresponding values.
+`readData()` returns two arrays: the first has strings that represent dates, the second holds its corresponding values.
 
 ```julia
 
